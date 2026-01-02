@@ -121,7 +121,7 @@ def resolve(issue,value=None):
         m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Fix: ","color":"green"},{"text":f"Make sure that all quotes ( \" and ' ) are closed at line {value}. Note: \" and ' cannot be combined","color":"yellow"}])
     elif issue == "undefined variable":
         m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Cause:","color":"yellow"}," ",{"text":"Undefined object","color":"red"}])
-        m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Fix: ","color":"green"},{"text":f"Make sure that '{value}' is a valid/imported function or object for the operation","color":"yellow"}])
+        m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Fix: ","color":"green"},{"text":f"Make sure that '{value}' is a valid defined/imported function or object for the operation","color":"yellow"}])
     elif issue == "non global variable":
         m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Cause:","color":"yellow"}," ",{"text":"Undefined variable in function","color":"red"}])
         m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Fix: ","color":"green"},{"text":f"Make sure that you make '{value}' global before the function ('global {value}')","color":"yellow"}])
@@ -234,4 +234,5 @@ if __name__ == "__main__":
         mappings = ast.literal_eval(requests.get(f"https://raw.githubusercontent.com/SmaertBoty/{data_pointer}/refs/heads/main/mappings.txt").text)
         save("mappings",mappings)
         m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Succesfully loaded ErrorLib!","color":"yellow"}])
+
         begin_chat_listener()
