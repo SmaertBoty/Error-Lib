@@ -120,8 +120,8 @@ def resolve(issue,value=None):
         m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Cause:","color":"yellow"}," ",{"text":"Missing quote","color":"red"}])
         m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Fix: ","color":"green"},{"text":f"Make sure that all quotes ( \" and ' ) are closed at line {value}. Note: \" and ' cannot be combined","color":"yellow"}])
     elif issue == "undefined variable":
-        m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Cause:","color":"yellow"}," ",{"text":"Undefined variable","color":"red"}])
-        m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Fix: ","color":"green"},{"text":f"Make sure that you set '{value}' to a value BEFORE using it","color":"yellow"}])
+        m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Cause:","color":"yellow"}," ",{"text":"Undefined object","color":"red"}])
+        m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Fix: ","color":"green"},{"text":f"Make sure that '{value}' is a valid/imported function or object for the operation","color":"yellow"}])
     elif issue == "non global variable":
         m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Cause:","color":"yellow"}," ",{"text":"Undefined variable in function","color":"red"}])
         m.echo_json([{"text":f"{signature}","color":"gold"}," ",{"text":"Fix: ","color":"green"},{"text":f"Make sure that you make '{value}' global before the function ('global {value}')","color":"yellow"}])
