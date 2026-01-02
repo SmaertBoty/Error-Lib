@@ -1,0 +1,1 @@
+[("minescript_plus","https://raw.githubusercontent.com/R4z0rX/minescript-scripts/refs/heads/main/Minescript-Plus/minescript_plus.py")]
